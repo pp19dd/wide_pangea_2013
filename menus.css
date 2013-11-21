@@ -1,0 +1,34 @@
+.digital_menu { margin-top:5px }
+.digital_menu li  {
+	list-style: none;
+	padding:0;
+	margin:0;
+	float: left;
+	background-color: white;
+	margin:1px;
+	padding:5px;
+	border:1px solid silver;
+	display:block;
+	/* width:91px; */
+	text-align: center;
+	background-image: url("http://media.voanews.com/designimages/tabs-news-bg.jpg");
+	background-repeat: repeat-x;
+ }
+.digital_menu a {
+	color: black;
+	display: block;
+	/*width:91px;*/
+	padding-left:7px;
+	padding-right:7px;
+}
+.digital_menu li.current-menu-item {
+	background-image:none;
+}
+.digital_menu .current-menu-item {
+
+}
+
+.digital_menu  .current-menu-item a {
+	font-weight: bold;
+	color: #B44E31
+}

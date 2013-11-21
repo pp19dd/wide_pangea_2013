@@ -1,0 +1,945 @@
+/* 	==================================================
+	basic page structure
+	==================================================	*/
+.voa_wp_wrap { }
+.voa_wp_header_wrap { }
+.voa_wp_posts_wrap { padding-top:2em }
+.voa_wp_page_numbers_wrap { }
+.voa_wp_archive { }
+.voa_wp_clear { clear: both }
+
+/* 	==================================================
+	author results page
+	==================================================	*/
+.voa_wp_author { }
+
+/* 	==================================================
+	archive results page
+	==================================================	*/
+
+.voa_wp_archive { }
+	
+/* 	==================================================
+	search results page
+	==================================================	*/
+.voa_wp_search { }
+.voa_wp_search .voa_wp_read_more { float: right }
+
+/* 	==================================================
+	error page
+	==================================================	*/
+
+.voa_wp_404 { }
+.voa_wp_404 h1 {
+	color: crimson;
+	margin-top:1em;
+	margin-bottom:2em;
+}
+.voa_wp_404 a { font-weight: bold }
+
+/* 	==================================================
+	single post
+	==================================================	*/
+
+.voa_wp_posts_wrap h1 {
+
+}
+
+.post-author-top a {
+	/*color: #717070;*/
+	text-decoration: none;
+}
+
+.post-author-top { font-size: 12px; font-weight: bold }
+.post-author-top a:hover,
+.post-author-top a:focus {
+	color: black;
+	text-decoration: underline;
+}
+
+.post_share_top {
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+	padding: 0.5em;
+	margin-bottom: 0;
+}
+.post_share_top_item { float: left; }
+/*.post_share_top_item_fb { width: 130px; }*/
+/*.post_share_top_item_tw { width: 100px; }*/
+/*.post_share_top_item_gp { width: 70px; }*/
+.post_content a { text-decoration: underline; color: darkblue }
+.post_content a:hover { color: red !important }
+
+/*.post_share_top_item_author a { text-decoration: none; color: gray }
+.post_share_top_item_author a:hover { text-decoration: underline; color: black }
+.post_share_top_item_author { text-align: right; float: right }*/
+
+.post_share_top_item_comments { float: right; text-align: right; width: auto; }
+.post_share_top_item_comments .post_comment_count { font-size: 12px; }
+/*.post_share_top_item_comments a { color: gray }*/
+
+.post-share-ft {
+	border-left: 1px dotted gray;
+	float: right;
+	margin-left: 10px;
+	padding-left: 15px;
+	width: 120px;
+}
+
+.post-share-ft-item { margin-top: 3px }
+
+.post-share-item-tw iframe { height: 20px; width: 98px; }
+.post-share-item-fb iframe { height: 21px; width: 144px; border: none; overflow: hidden; }
+.post-share-item-gp iframe { height: 20px; width: 87px; /* margin-left: -8px; margin-top: -9px; */ }
+
+.post_content { padding-top: 1em; }
+.post_content br { margin-bottom: 1em; }
+	
+/* 	==================================================
+	misc
+	==================================================	*/
+
+.post_before { }
+.post_after {
+	margin-bottom: 2em;
+}
+	
+.at_time { display: none }
+
+.page blockquote, .post blockquote { border-left: 10px solid silver; padding-left: 10px; }
+.page blockquote *, .post blockquote * { color: gray; font-style: oblique; }
+
+.post_content p iframe {
+	max-width: 100%; /* for iframes in posts, like embedded google docs forms, scribd documents, etc */
+}
+
+.post_content object,
+.post_content embed {
+	max-width: 100%;
+	/*width: 100%;
+	height: auto;*/
+}
+
+/* 	==================================================
+	photo captions
+	==================================================	*/
+
+.wp-caption-text {
+	color: silver !important;
+	font-family: Arial !important;
+	font-size: 12px !important;
+	font-style: normal !important;
+	line-height: 1.5em !important;
+	margin-bottom: 0 !important;
+	text-align: left;
+	padding: 5px;
+}
+
+.wp-caption {
+	background-color: #222 !important;
+	border-radius: 3px 3px 3px 3px;
+	border: none;
+	margin: 5px 10px 10px 10px;
+	max-width: 100%;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.wp-caption.alignright { 
+	margin-right:0;
+	padding-right:0;
+}
+
+.wp-caption.alignleft { 
+	margin-left:0;
+	padding-left:0;
+}
+
+.wp-caption.aligncenter {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.wp-caption img {
+	max-width: 98.5% !important;
+}
+
+/* 	==================================================
+	pagination
+	==================================================	*/
+#wp_page_numbers { margin-top:40px; border-top:4px solid silver}
+#wp_page_numbers ul { /*padding:5px !important ;*/ border:0 !important }
+
+#wp_page_numbers li { padding:5px !important }
+
+#wp_page_numbers .page_info { padding-top:8px !important; color: black !important }
+#wp_page_numbers a { color: black !important }
+
+
+
+/* 	==================================================
+	authors 
+	==================================================	*/
+
+.voa_wp_author { }
+
+.voa_wp_author_box {
+	/* border:1px solid silver; */
+	/* background-color: oldlace; */
+	border-top: 1px solid silver;
+	margin-top:3em;
+	margin-bottom:1em;
+	clear: both;
+	padding-top:1em;
+}
+
+.voa_wp_author_box_inner { }
+
+.author_gravatar {
+	float:left;
+	width:95px;
+}
+
+.author_name {
+	float: right;
+	color: gray;
+	font-size:1.5em;
+	margin-top:5px;
+	margin-right:5px;
+	padding-left:5px;
+}
+
+.author_name a { color: gray; text-decoration: none }
+.author_name a:hover { color: black; text-decoration: underline }
+
+
+.author_bio {
+	font-size: 12px;
+	line-height:1.5em;
+	color: gray;
+	/* padding: 0.5em; */
+}
+
+.posts_by_author { margin-bottom:2em; }
+.posts_by_author h3 { text-align: center }
+.voa_wp_excerpt_meta { font-size: 12px; color: gray }
+.voa_wp_excerpt_meta a { color: gray !important }
+.voa_wp_excerpt_meta a:hover { color: black }
+
+/* 	==================================================
+	wordpress sidebar
+	==================================================	*/
+
+/* 	==================================================
+	pangea update
+	==================================================	*/
+
+div.footerlinks { display: none !important }
+.post_content .post_meta { clear: both }
+.cssclear { clear: both }
+.articleContent { width:630px; overflow: hidden; /*border-right: 2px solid #374EC5; padding-right: 2px */ }
+.articleContent .post, .articleContent .page, .articleContent .attachment { /*border-bottom: 2px solid #374EC5; */ padding-bottom: 60px }
+.content_column2_2 .widget { /* border-bottom:2px solid #374EC5*/ margin-bottom:15px }
+.content_column2_2 h4.topicsHeader { margin-top:40px }
+
+.post_meta { padding:1em; background-color: rgb(230,230,230); clear:both }
+.articleContent .post, .articleContent .page, .articleContent .attachment { padding-right:20px }
+.articleContent .stamp { color: #717070; font-size: 11px; font-weight: normal; line-height: 11px; }
+.content_column2_2 .widget_rss li { line-height:1.5em }
+.articleContent .post p, .articleContent .page p { margin-bottom:1em }
+
+.articleContent .post_single { border-bottom: 0px !important }
+.articleContent .post_last { border-bottom: 0px !important }
+
+.content_column2_2 .hentry p.byline { display: none }
+.content_column2_2 .hentry h2.post-title { display: none }
+.content_column2_2 .hentry .entry-content p { margin-bottom:1em }
+div.content_column2_2 { padding-top:0px !important; }
+.widget ul { padding-left:1em }
+.widget li { line-height:1.5em; list-style:disc }
+
+h3.boxwidget_part { background-color: #374EC5; padding:4px; color: white !important }
+h3.boxwidget_part a { color: white !important }
+
+.post_nav { font-size: 12px; color: gray; width: 100%; }
+
+.post_nav td { font-size:12px; line-height: 125%; vertical-align: top; width: 50%; }
+.post_nav td.newer { text-align: right; }
+
+.post_nav td a { 
+	color: gray;
+	display: inline-block;
+}
+
+.post_nav td.older a {
+	background: #fff url(http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/blog-nav-arrow-left.png) left 1px no-repeat;
+	padding-left: 18px;
+	text-align: left;
+}
+
+.post_nav td.newer a {
+	background: #fff url(http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/blog-nav-arrow-right.png) right 1px no-repeat;
+	padding-right: 18px;
+	text-align: right;
+}
+
+
+
+
+
+.yd_linkware { display: none }
+
+
+
+.digital_menu { margin-top:10px }
+.digital_menu li { display: inline; padding:7px; border:1px solid silver }
+.current-menu-item { background-color: silver }
+
+
+/* 	==================================================
+	old pre-pangea css
+	==================================================	*/
+
+.widget { margin-bottom:1em }
+.widget h4 { height: inherit !important; margin-bottom:3px }
+.entry { overflow: hidden }
+
+.widget_calendar table { width:330px; height: 200px }
+.widget_calendar td, .widget_calendar th { font-size:12px; text-align: center; color: silver }
+.widget_calendar th { border:1px solid silver; color: gray }
+.widget_calendar a { color: #B44E31 !important; font-weight: bold !important }
+
+.widget_rss img { margin:0 !important; margin-right:5px !important }
+
+.post, div.page, div.attachment { margin-bottom: 6em }
+.post .alignright { float: right }
+.post .alignleft { float: left }
+
+.post img, div.page img, .attachment img { border: 0; height: auto; max-width: 100%; }
+img.alignright { margin: 5px 0 10px 10px; }
+img.alignleft { margin: 5px 10px 10px 0; }
+.post .more-link { display: block; margin: 1em; clear: both; color:#B44E31 !important}
+.stamp { margin-bottom:0.5em;}
+
+.alignleft { float: left }
+.alignright { float: right }
+
+.widget_categories .cat-item  {
+	/*font-size:12px;*/
+	padding-top:0;
+	padding-bottom:0;
+}
+
+.widget_categories .children .cat-item {
+	margin-left:13px;
+}
+
+.f8_box { 
+	margin-top:40px;
+	width:610x !important;
+	overflow: hidden; 
+}
+
+.FB_SERVER_IFRAME {
+	width:484px !important;
+}
+
+
+
+/* begin merge from /ted/ */
+/*
+li.cat-item + a + ul.children {
+	background-color: gray;
+}
+*/
+
+.all_words_top { 
+	padding-bottom:1em;
+	border-bottom:1px dashed black;
+}
+
+.single_letter {
+	font-size:16px;
+	text-align: center;
+	font-family: Courier New;
+	-moz-border-radius:3px;
+	background-color: whitesmoke;
+	white-space:nowrap;
+}
+.single_letter a {
+	padding:3px;
+}
+.single_letter:hover {
+	background-color: gray;
+}
+
+.tab09 {
+	font-family: Arial;
+	font-size:13px !important;
+}
+
+.all_words {
+	font-size:12px;
+}
+
+.letter {
+	margin-top:2em;
+	margin-bottom:1em;
+}
+
+.letter h4 {
+	font-size:2em;
+	-moz-border-radius:10px 10px 10px 10px;
+	border:1px solid black;
+	text-align:center;
+	width:50px;
+}
+
+.words {
+	margin-bottom:10px;
+	clear: both;
+}
+
+.word {
+	font-weight: bold;
+	float: left;
+	padding-right: 1em;
+	line-height: 1.5em;
+}
+
+.definition {
+	line-height: 1.5em;
+}
+
+.post .more-link {
+	text-align: right;
+}
+
+
+.widget {
+	padding: 3px !important;
+	overflow: hidden;
+}
+
+
+.post, div.page, .attachment {
+	background-color: white !important;
+	margin-top:5px !important;
+	margin-bottom:0 !important;
+}
+
+.entry, .stamp, .post h2, .page h2 { margin: 0 auto .8em auto; }
+.post h2, .page h2 { border-top:0 !important; }
+
+.post_wrapper {
+	/* padding:10px !important; */
+}
+
+
+.cpl { white-space: nowrap; }
+
+.listBox { margin-bottom: 5px !important }
+
+.page-template-templatemainpage-php .moreNewsBoxList { width:630px !important; margin-top:0px !important; margin-bottom:5px !important; background-color: white }
+.page-template-templatemainpage-php .leftCol { width:313px !important; padding-right:0px !important; background-color: white }
+.page-template-templatemainpage-php .rightCol { width:313px !important; padding-left:0px !important; background-color: white }
+
+.ph2 { margin:0; }
+
+.ph2s1 { padding-left:3px }
+.ph2s2 { float:right;font-size:10px; font-weight:normal;font-family: Arial; border-left:1px dotted silver }
+
+.post_content ul li, 
+.page ul li { 
+	list-style: disc outside none !important;
+	margin: 0 0 .5em 25px;
+	padding: 0;
+}
+
+.post_content ol,
+.page ol {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.post_content ol li,
+.page ol li {
+	line-height: 22px;
+	list-style: decimal outside none;
+	margin: 0 0 .5em 25px;
+	padding: 0;
+}
+
+
+/* 	==================================================
+	MODIFIED RULES - 2013-08-21
+	==================================================	*/
+
+h3.boxwidget_part { /*background-color: #FFA12E;*/ font-size: 13px; line-height: 110%; padding: 8px; font-weight: bold }
+
+div.content_column2_2 { padding-top: 8px !important; }
+h3.boxwidget_part a { vertical-align: middle; }
+
+
+
+/* 	==================================================
+	comments
+	==================================================	*/
+
+div.commentlist { 
+	margin-top: 2em;
+}
+
+ol.commentlist {
+	margin: 0; padding: 0;
+}
+
+.commentlist {
+	
+}
+
+.commentlist h3#comments {
+	margin-bottom: 1.5em;
+}
+
+.commentlist li {
+	list-style: none;
+	padding: 0;
+}
+
+.commentlist > li {
+	border-bottom: 1px #ddd solid;
+	margin-bottom: 1.5em;
+}
+
+.commentlist > li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.commentlist .comment-body {
+	margin-bottom: 1.5em;
+}
+
+.commentlist .children {
+	margin-left: 2em;
+}
+
+.commentlist .children .comment-body {
+	border-left-style: solid;
+	border-left-width: 2px;
+	padding: 1em;
+}
+
+.commentlist .children .depth-2 > .comment-body { background: #f1f1f1; border-color: #ccc; }
+.commentlist .children .depth-3 > .comment-body { background: #e1e1e1; border-color: #bbb; }
+.commentlist .children .depth-4 > .comment-body { background: #d1d1d1; border-color: #999; }
+
+.commentlist p {
+	clear: both;
+	font-size: 15px;
+	padding: 0;
+}
+
+.avatar {
+	float: left;
+	margin: 0 9px 9px 0;
+}
+
+.comment-author {
+	font-size: 12px;
+}
+
+.comment-author .fn {
+	font-style: normal;
+	font-weight: bold;
+}
+
+.comment-meta {
+	font-size: 11px;
+	color: #666;
+}
+
+.comment-body .reply {
+	font-size: 12px;
+	line-height: 100%;
+	text-align: right;
+}
+
+.commentlist .depth-1 > .comment-body .reply { margin-right: 1em; }
+
+.comment-reply-link {
+	border-radius: 3px;
+	display: inline-block;
+	padding: .5em;
+}
+
+.commentlist .depth-1 > .comment-body .comment-reply-link {
+	background: #eee;
+}
+
+.comment-reply-link:hover,
+.comment-reply-link:focus,
+.commentlist .depth-1 > .comment-body .comment-reply-link:hover,
+.commentlist .depth-1 > .comment-body .comment-reply-link:focus {
+	background: #374ec5;
+	color: #f8f8f8;
+	text-decoration: none;
+}
+
+#respond {
+	background: #e2e7ff;
+	padding: 15px;
+}
+
+#respond textarea { 
+	resize: vertical;
+	width: 99.5%; 
+}
+
+
+/* 	==================================================
+	RTL (right-to-left) support
+	==================================================	*/
+
+.dir-rtl .post_content ol {
+	padding-right: 0;
+}
+
+.dir-rtl .post_content li {
+	margin: 0 25px .5em 0;
+}
+
+.dir-rtl .post_nav td.newer {
+	text-align: left;
+}
+
+.dir-rtl .post_nav td.older a {
+	background: #fff url(http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/blog-nav-arrow-right.png) right 1px no-repeat;
+	padding-right: 18px;
+	text-align: right;
+}
+
+.dir-rtl .post_nav td.newer a {
+	background: #fff url(http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/blog-nav-arrow-left.png) left 1px no-repeat;
+	padding-left: 18px;
+	text-align: left;
+}
+
+.dir-rtl .post_share_top_item {
+	float: right;
+}
+
+.dir-rtl .post_share_top_item_comments {
+	float: left;
+}
+
+.dir-rtl .avatar {
+	float: right;
+	margin: 0 0 9px 9px;
+}
+
+.dir-rtl .post-share-ft {
+	border-right: 1px dotted gray;
+	border-left: none;
+	float: left;
+	margin-right: 10px;
+	margin-left: 0;
+	padding-right: 15px;
+	padding-left: 0;
+	width: 125px;
+}
+
+.dir-rtl .post-share-ft-item {
+	direction: ltr;
+	text-align: left;
+}
+
+.dir-rtl .comment-body .reply {
+	text-align: left;
+}
+
+.dir-rtl .commentlist .depth-1 > .comment-body .reply {
+	margin-right: 0;
+	margin-left: 1em;
+}
+
+.dir-rtl .commentlist .children {
+	margin-left: 0;
+	margin-right: 2em;
+}
+
+.dir-rtl .commentlist .children .comment-body {
+	border-left-width: 0;
+	border-right-style: solid;
+	border-right-width: 2px;
+}
+
+
+/* 	==================================================
+	mobile styles
+	==================================================	*/
+
+@media only screen and (max-width: 500px) {
+
+	html#html1, body#bd1 {
+		min-width: 100%;
+		overflow-x: hidden;
+		width: 100%;
+	}
+
+	div.articleContent,
+	.content_centered,
+	div.content_column2_1,
+	div.content_column2_2 {
+		width: 100%;
+	}
+
+	#top_bar, 
+	#top_bar_expanded,
+	#header_services,
+	ul.header_navigation,
+	.post_nav_detail,
+	#footerServices {
+		display: none;
+		visibility: hidden;
+	}
+
+	.columns {
+		padding-top: 0;
+	}
+
+	.content_column2_2 .widget {
+		padding: 0 12px 12px 12px !important;
+	}
+
+	#header {
+		background: none;
+		height: auto !important;
+	}
+
+	#header .content_centered {
+		height: auto;
+	}
+
+	/* defaults for mobile blog header logo */
+	#header .content_centered h2#header_logo {
+		background-color: #fff;
+		background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-english.png );
+		background-position: left top;
+		background-repeat: no-repeat;
+		background-size: contain;
+		border-bottom: 3px solid #132FBE;
+		height: auto;
+		max-width: 100%;
+		margin: 0;
+		width: 100%;
+	}
+
+	.dir-rtl #header .content_centered h2#header_logo {
+		background-position: right top;
+	}
+
+	/*.wide_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-english.png ); }*/
+	.albanian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-albanian.png ); }
+	.armenian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-armenian.png ); }
+	.azerbaijani_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-azerbaijani.png ); }
+	.bangla_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-bangla.png ); }
+	.bosnian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-bosnian.png ); }
+	.cantonese_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-cantonese.png ); }
+	.chinese_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-chinese.png ); }
+	.dari_pangea_2013 #header .content_centered h2#header_logo 			{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-dari.png ); }
+	.deewa_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-deewa.png ); }
+	.georgian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-georgian.png ); }
+	.hausa_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-hausa.png ); }
+	.indonesian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-indonesian.png ); }
+	.khmer_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-khmer.png ); }
+	.korean_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-korean.png ); }
+	.kurdi_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-kurdi.png ); }
+	.kurdish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-kurdish.png ); }
+	.macedonian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-macedonian.png ); }
+	.pashto_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-pashto.png ); }
+	.russian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-russian.png ); }
+	.serbian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-serbian.png ); }
+	.spanish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-spanish.png ); }
+	.turkish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-turkish.png ); }
+	.ukrainian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-ukrainian.png ); }
+	.urdu_pangea_2013 #header .content_centered h2#header_logo 			{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-urdu.png ); }
+	.uzbek_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-uzbek.png ); }
+	.vietnamese_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-vietnamese.png ); }
+
+	#header .content_centered h2#header_logo a {
+		height: 0;
+		margin: 0;
+		padding-top: 20%;
+	}
+
+	.articleContent .post,
+	.articleContent .page,
+	.articleContent .attachment {
+		padding-right: 0;
+	}
+
+	#proto_header {
+		background-size: contain;
+		height: auto !important;
+		max-width: 100%;
+		width: 100% !important;
+	}
+
+	#proto_header a {
+		height: 0;
+		padding: 20% 0 0 0 !important;
+	}
+
+	.post_after {
+		margin-bottom: 1em;
+	}
+
+	.post_meta {
+		padding: .5em;
+	}
+
+	/*.post_meta_left div {
+		font-size: 12px;
+		line-height: 140%;
+	}*/
+
+	.post_share_top {
+		display: none;
+		visibility: hidden;
+	}
+
+	.post-share-ft {
+		border-left: none;
+		float: none;
+		margin-left: 0;
+		padding-left: 0;
+		width: 100%;
+	}
+
+	.dir-rtl .post-share-ft {
+		border: 0;
+		direction: ltr;
+		float: none;
+		margin-right: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+
+	.post-share-ft-item {
+		float: left;
+		margin: 0 .35em .5em 0;
+	}
+
+	/*.post-share-item-tw iframe { width: 58px; }
+	.post-share-item-fb iframe { width: 95px; }
+	.post-share-item-gp iframe { width: 40px; }*/
+
+	.post_comment_count {
+		float: left;
+		font-size: 12px;
+		line-height: 100%;
+		margin-bottom: .5em;
+		padding-top: 4px;
+		white-space: nowrap;
+	}
+
+	.post_tags { 
+		clear: both;
+		border-top: 1px #ccc solid;
+		font-size: 12px;
+		line-height: 125%;
+		margin-top: 1em;
+		padding-top: .5em;
+	}
+
+	.post_categories {
+		font-size: 12px;
+		line-height: 125%;
+		margin-top: .5em;
+	}
+
+	.post_content img {
+		-ms-interpolation-mode: bicubic;
+		border: 0 !important;
+		height: auto !important;
+		max-width: 100% !important;
+		vertical-align: middle !important;
+	}
+
+	.post_content img[class*="align"],
+	.post_content img[class*="wp-image-"] {
+		height: auto !important; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	}
+
+	.post_content img.size-full {
+		max-width: 100% !important;
+		width: auto !important; /* Prevent stretching of full-size images with height and >>width attributes in IE8 */
+	}
+
+	.post_content .wp-caption { max-width: 100% !important; text-align: center; }
+
+	.post_content .wp-caption img {
+		width: 96% !important;
+	}
+
+	.gallery {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	.gallery br {
+		clear: none !important;
+		display: none;
+		visibility: hidden;
+	}
+
+	.gallery-item {
+		margin: 0 2% !important;
+		width: 46% !important;
+	}
+
+	#respond {
+		padding: .75em;
+	}
+
+	div.commentlist {
+		margin-top: 1em;
+	}
+
+	.commentlist h3#comments,
+	.commentlist > li,
+	.commentlist .comment-body {
+		margin-bottom: .75em;
+	}
+
+	.commentlist .children {
+		margin-left: .75em; 
+	}
+
+	.dir-rtl .commentlist .children {
+		margin-right: .75em;
+	}
+
+	.commentlist .children .comment-body {
+		padding: .5em;
+	}
+
+	.commentlist p {
+		font-size: 12px;
+		line-height: 140%;
+	}
+
+	.commentlist .depth-1 > .comment-body .reply { margin-right: .5em; }
+
+	#footer #footerLinks {
+		border-top: 2px #2C45C3 solid;
+	}
+
+}
+
+
