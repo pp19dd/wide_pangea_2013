@@ -1,184 +1,19 @@
 <?php
 
-define( VOA_DEFAULT_LOGO_URL, "http://blogs.voanews.com/wp-content/themes/wide_pangea_2013/setta.jpg" );
-
-/**
- * Returns a list of installed themes
- * Transforms it for an easy name-to-slug lookup, since slug is used in meta option keys
- * @return mixed
- */
-function voa_get_themes() {
-	$themes = wp_get_themes();
-	
-	# $themes is a complex structure, but without a way to easily go from theme name to slug. 
-	# instead, it's keyed from slug to complex. building a lookup table for later use:
-	$theme_names_to_keys = array();
-	foreach( $themes as $theme_key => $theme_data ) {
-		$theme_names_to_keys[$theme_data->__get('name')] = $theme_key;
-	}
-
-	return( $theme_names_to_keys );
-}
-
-/**
- * Replacement for WP's get_option(), avoiding switch_to_blog()
- * @return mixed
- */
-function voa_get_option( $blog_id = 0, $option_name, $simple = false ) {
-	global $wpdb;
-	
-	$sql = sprintf(
-		"select * from wp_%s_options where option_name='%s' limit 1",
-		intval( $blog_id ),
-		$wpdb->escape( $option_name )
-	);
-
-	$option = $wpdb->get_row( $sql );
-	
-	if( $simple == true ) return( $option->option_value );
-	
-	return( @unserialize( $option->option_value ) );
-}
- 
-
-/**
- * Returns 3 latest posts: permalinks, post titles
- * @return mixed
- */
-function voa_get_latest_posts( $blog_id, &$meta ) {
-	global $wpdb;
-	
-	$entries = $wpdb->get_results(sprintf(
-		"select ID, post_date, post_name, post_title from wp_%s_posts where post_type='post' and post_status='publish' order by post_date desc limit 3",
-		$blog_id
-	));
-	
-	// expected: http://blogs.voanews.com/african-music-treasures/2013/10/15/bassekou-kouyates/
-	foreach( $entries as $k => $entry ) {
-		
-		$ts = strtotime( $entry->post_date );
-	
-		$entries[$k]->permalink = sprintf(
-			"%s%s/%s/%s/%s/",
-			$meta->blog_url,
-			date("Y", $ts),
-			date("m", $ts),
-			date("d", $ts),
-			$entry->post_name
-		);
-	}
-	
-	return( $entries );
-}
- 
-/**
- * Gets a simple list of all WPMU blogs -- live blogs, with their options
- * Each blog entry contains:
- * ->meta
- *     ->directory: 	object array (language preferences, option whether to hide entry)
- *     ->posts: 		object array (3 most recent posts, urls, titles)
- *     ->header image: 	string (url)
- *     ->blog_name: 	string
- *     ->blog_url: 		string
- *     ->blog_desc:		blog tag
- * @return mixed
- */
-
-function voa_get_intro_blogs_all( $show_hidden = false ) {
-	global $wpdb;
-
-	$themes = voa_get_themes();
-	
-	$sql = "select * from wp_blogs where blog_id!=1 and `deleted`=0 and `public`=1 order by `path` asc";
-	$blogs = $wpdb->get_results($sql);
-	
-	foreach( $blogs as $k => $blog ) {
-		$blogs[$k]->meta->directory = voa_get_option( $blog->blog_id, "voa_opt_directory" );
-		
-		# need to find theme first 				(ex: b_Pangea african music)
-		# from it, locate theme slug			(ex: 
-		# then locate theme_mods_{$theme_name}  (ex: theme_mods_azerbaijani_pangea_2013)
-		#$blogs[$k]->meta->theme = voa_get_option( $blog->blog_id, "theme_mods_" . , true );
-		
-		$blogs[$k]->meta->current_theme = voa_get_option( $blog->blog_id, "current_theme", true );
-		$blogs[$k]->meta->current_theme_slug = $themes[$blogs[$k]->meta->current_theme];
-		
-		$theme_mods = voa_get_option(
-			$blog->blog_id, "theme_mods_" . $blogs[$k]->meta->current_theme_slug
-		);
-		if( is_null($theme_mods["header_image"]) ) $theme_mods["header_image"] = VOA_DEFAULT_LOGO_URL;
-		$blogs[$k]->meta->header_image = $theme_mods["header_image"];
-		
-		$blogs[$k]->meta->blog_name = voa_get_option( $blog->blog_id, "blogname", true );
-		$blogs[$k]->meta->blog_url = sprintf( "http://blogs.voanews.com%s", $blog->path );
-		$blogs[$k]->meta->blog_desc = voa_get_option( $blog->blog_id, "blogdescription", true );
-		
-		$blogs[$k]->meta->posts = voa_get_latest_posts( $blog->blog_id, $blogs[$k]->meta );
-	}
-	
-	return( $blogs );
-}
-
-/**
- * Gets a list of WPMU blogs by specific Language
- * Comes back with header images, taglines, etc
- * @return mixed
- */
-function voa_get_intro_blogs( $blogs, $language = null ) {
-	global $wpdb;
-
-	#$blogs = voa_get_intro_blogs_all();
-
-	// filter any results, if needed. normally we need all the additional information
-	// to discern languages, etc, so start with the large list and whittle it down
-	if( is_null( $language ) ) {
-		return( $blogs );
-	} else {
-		$ret = array_filter( $blogs, function($e) use( $language ) {
-			
-			// hide option override
-			if( $e->meta->directory["voa_introgroup_cfg"] == "hide" ) return( false );
-			
-			// languages match
-			if( $e->meta->directory["voa_language"] == $language ) return( true );
-		
-			// unknown, so assume entry doesn't match
-			return( false );
-		});
-		return( $ret );
-	}
-
-}
-
-/**
- * Returns available languages as seen by query
- * @return mixed
- */
-function voa_get_languages( &$blogs ) {
-	$languages = array();
-	foreach( $blogs as $blog ) {
-		$language = $blog->meta->directory['voa_language'];
-		$cfg = $blog->meta->directory['voa_introgroup_cfg'];
-		
-		if( is_null( $language ) ) continue;
-		if( $language == "" ) continue;
-		if( $cfg == "hide" ) continue;
-		
-		$languages[$language]++;
-	}
-	return( $languages );
-}
+include_once( "functions.blogs.php" );
+include_once( "functions.date.php" );
 
 
 # =======================================================
 # ordinary templating below
 # =======================================================
 
-add_theme_support( 'post-thumbnails', array( 'picthumbs' ) );
+# add_theme_support( 'post-thumbnails', array( 'picthumbs' ) );
+add_theme_support( 'post-thumbnails' );
+// set_post_thumbnail_size( 100, 75, true );
+set_post_thumbnail_size( 113, 80, true );
+add_image_size( "bloglister-thumb", 113, 80, true );
 
-set_post_thumbnail_size( 100, 75, true );
-
-include_once( "functions.date.php" );
 
 function _ago($tm,$rcs = 0, $cur_tm = null) {
 	if( is_null($cur_tm) ) $cur_tm = time();
@@ -224,11 +59,21 @@ add_action( 'widgets_init', 'voa_wide_pangea_widgets_init' );
 
 	
 // make changeable header - dimensions changeable in options
-$voa_header_w = 630;
+$voa_header_w = 640;
 $voa_header_h = 125;
 $header_options = get_option("voa_opt_style");
-if( isset( $header_options['voa_header_w'] ) && strlen(trim($header_options['voa_header_w'])) > 0 ) $voa_header_w = intval($header_options['voa_header_w']);
-if( isset( $header_options['voa_header_h'] ) && strlen(trim($header_options['voa_header_h'])) > 0 ) $voa_header_h = intval($header_options['voa_header_h']);
+if(
+    isset( $header_options['voa_header_w'] ) && 
+    strlen(trim($header_options['voa_header_w'])) > 0
+) {
+    $voa_header_w = intval($header_options['voa_header_w']);
+}
+if(
+    isset( $header_options['voa_header_h'] ) &&
+    strlen(trim($header_options['voa_header_h'])) > 0
+) {
+    $voa_header_h = intval($header_options['voa_header_h']);
+}
 
 define('HEADER_TEXTCOLOR', '');
 define('HEADER_IMAGE', '%s/setta.jpg'); // %s is theme dir uri
@@ -277,3 +122,98 @@ function menu_wide_fallback_cb($a) {
 register_nav_menus( array(
 	'wide' => __( 'Primary Navigation', 'wide' ),
 ) );
+
+
+function voa_add_editor_styles() {
+    add_editor_style( 'voa-editor-style.css' );
+}
+
+add_action( 'init', 'voa_add_editor_styles' );
+
+
+// Callback function to insert 'styleselect' into the $buttons array
+function voa_mce_buttons_2( $buttons ) {
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter('mce_buttons_2', 'voa_mce_buttons_2');
+
+
+// Callback function to filter the MCE settings
+function voa_mce_additional_formats( $init_array ) {
+	
+	// Define the style_formats array
+	$style_formats = array(
+		// Each array child is a format with its own settings
+		array(
+			'title'   => 'Basic Boxout Left',
+			'block'  => 'blockquote',
+			'classes' => 'boxout boxout-basic boxout-left',
+			'wrapper' => true
+		),
+
+		array(
+			'title'   => 'Basic Boxout Right',
+			'block'  => 'blockquote',
+			'classes' => 'boxout boxout-basic boxout-right',
+			'wrapper' => true
+		),
+
+		array(
+			'title'   => 'Dark Boxout Left',
+			'block'  => 'blockquote',
+			'classes' => 'boxout boxout-dark boxout-left',
+			'wrapper' => true
+		),
+
+		array(
+			'title'   => 'Dark Boxout Right',
+			'block'  => 'blockquote',
+			'classes' => 'boxout boxout-dark boxout-right',
+			'wrapper' => true
+		),
+
+		array(
+			'title'   => 'Plain Boxout Left',
+			'block'  => 'blockquote',
+			'classes' => 'boxout boxout-plain boxout-left',
+			'wrapper' => true
+		),
+
+		array(
+			'title'   => 'Plain Boxout Right',
+			'block'  => 'blockquote',
+			'classes' => 'boxout boxout-plain boxout-right',
+			'wrapper' => true
+		)
+	);
+
+	// Insert the array, JSON ENCODED, into 'style_formats'
+	$init_array['style_formats'] = json_encode( $style_formats );
+
+	return $init_array;
+}
+
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'voa_mce_additional_formats' );
+
+
+
+// adds social media links to user profile page
+// added by smekosh on 2014-08-26
+function voa_social_media_links($profile_fields) {
+
+	// Add new fields
+	$profile_fields['facebook']   = 'Facebook URL';
+	$profile_fields['gplus']      = 'Google+ URL';
+	$profile_fields['instagram']  = 'Instagram URL';
+	$profile_fields['pinterest']  = 'Pinterest URL';
+	$profile_fields['soundcloud'] = 'SoundCloud URL';
+	$profile_fields['twitter']    = 'Twitter URL';
+	$profile_fields['youtube']    = 'YouTube URL';
+
+	return $profile_fields;
+}
+
+add_filter('user_contactmethods', 'voa_social_media_links');

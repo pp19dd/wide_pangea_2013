@@ -1,0 +1,82 @@
+/* provides styles for content in the WP admin editor */
+
+body#tinymce.wp-editor { 
+	font-family: Arial, Helvetica, "Arial Unicode MS", sans-serif;
+	font-size: 15px;
+	line-height: 145%;
+	max-width: 640px;
+}
+
+body#tinymce.wp-editor p,
+body#tinymce.wp-editor ul,
+body#tinymce.wp-editor ol {
+	margin-bottom: 1em;
+}
+
+body#tinymce.wp-editor li {
+	margin-bottom: .5em;
+}
+
+
+/* special format blockquotes */
+body#tinymce.wp-editor blockquote.boxout         { border-width: 2px; border-style: solid; padding: 10px 10px 0 10px; width: 274px; }
+body#tinymce.wp-editor blockquote.boxout *       { font-style: normal; }
+body#tinymce.wp-editor blockquote.boxout a       { color: #1330bf; }
+body#tinymce.wp-editor blockquote.boxout a:hover { color: red; }
+
+body#tinymce.wp-editor blockquote.boxout-plain   { background: #ffffff; border-color: #ccc; }
+body#tinymce.wp-editor blockquote.boxout-dark    { background: #444444; border-color: #444; }
+body#tinymce.wp-editor blockquote.boxout-basic   { background: #ececec; border-color: #1330bf; border-width: 10px 0 1px 0; border-bottom-color: #ccc; }
+
+body#tinymce.wp-editor blockquote.boxout-plain * { color: #4a4a4a; }
+
+body#tinymce.wp-editor blockquote.boxout-dark *  { color: #f8f8f8; }
+body#tinymce.wp-editor blockquote.boxout-dark a  { color: #7996ff; }
+
+body#tinymce.wp-editor blockquote.boxout-basic * { color: #333; }
+
+body#tinymce.wp-editor blockquote.boxout-left    { float: left;  margin: 5px 10px 10px 0; }
+body#tinymce.wp-editor blockquote.boxout-right   { float: right; margin: 5px 0 10px 10px; }
+
+body#tinymce.wp-editor blockquote.boxout ol, 
+body#tinymce.wp-editor blockquote.boxout ul,
+body#tinymce.wp-editor blockquote.boxout p,
+body#tinymce.wp-editor blockquote.boxout h2      { margin-top: 0; }
+
+body#tinymce.wp-editor blockquote.boxout h2      { font-size: 1em; margin-bottom: .5em; }
+
+
+/* images *************************************************/
+
+body#tinymce.wp-editor .wp-caption-dd {
+	color: silver;
+	font-size: 12px;
+	line-height: 1.5em;
+	margin-bottom: 0;
+	text-align: left;
+	padding: 5px;
+}
+
+body#tinymce.wp-editor .wp-caption {
+	background-color: #222;
+	border-radius: 3px 3px 3px 3px;
+	border: none;
+	margin: 5px 10px 10px 10px;
+	max-width: 100%;
+	padding-top: 5px;
+	text-align: center;
+}
+
+body#tinymce.wp-editor .alignleft {
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+body#tinymce.wp-editor .alignright {
+	margin-left: 1em;
+	margin-right: 0;
+}
+
+body#tinymce.wp-editor .aligncenter {
+	margin: 0 0 1em 0;
+}

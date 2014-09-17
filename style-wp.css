@@ -67,8 +67,8 @@
 /*.post_share_top_item_fb { width: 130px; }*/
 /*.post_share_top_item_tw { width: 100px; }*/
 /*.post_share_top_item_gp { width: 70px; }*/
-.post_content a { text-decoration: underline; color: darkblue }
-.post_content a:hover { color: red !important }
+.post_content a { text-decoration: underline; color: #132fbe; }
+.post_content a:hover { color: #cb131a !important; }
 
 /*.post_share_top_item_author a { text-decoration: none; color: gray }
 .post_share_top_item_author a:hover { text-decoration: underline; color: black }
@@ -76,7 +76,8 @@
 
 .post_share_top_item_comments { float: right; text-align: right; width: auto; }
 .post_share_top_item_comments .post_comment_count { font-size: 12px; }
-/*.post_share_top_item_comments a { color: gray }*/
+.post_share_top_item_comments a i.fa { color: #666; margin-right: .25em; text-decoration: none; }
+.post_share_top_item_comments a:hover i.fa { color: #132fbe !important; }
 
 .post-share-ft {
 	border-left: 1px dotted gray;
@@ -93,7 +94,9 @@
 .post-share-item-gp iframe { height: 20px; width: 87px; /* margin-left: -8px; margin-top: -9px; */ }
 
 .post_content { padding-top: 1em; }
+/* should this be commented out?
 .post_content br { margin-bottom: 1em; }
+*/
 	
 /* 	==================================================
 	misc
@@ -109,6 +112,36 @@
 .page blockquote, .post blockquote { border-left: 10px solid silver; padding-left: 10px; }
 .page blockquote *, .post blockquote * { color: gray; font-style: oblique; }
 
+
+/* special format blockquotes */
+blockquote.boxout         { border-width: 2px; border-style: solid; padding: 10px 10px 0 10px; width: 274px; }
+blockquote.boxout *       { font-style: normal; }
+blockquote.boxout a       { color: #1330bf; }
+blockquote.boxout a:hover { color: red; }
+
+blockquote.boxout-plain   { background: #ffffff; border-color: #ccc; }
+blockquote.boxout-dark    { background: #444444; border-color: #444; }
+blockquote.boxout-basic   { background: #ececec; border-color: #1330bf; border-width: 10px 0 1px 0; border-bottom-color: #ccc; }
+
+blockquote.boxout-plain * { color: #4a4a4a; }
+
+blockquote.boxout-dark *  { color: #f8f8f8; }
+blockquote.boxout-dark a  { color: #7996ff; }
+
+blockquote.boxout-basic * { color: #333; }
+
+blockquote.boxout-left    { float: left;  margin: 5px 10px 10px 0; }
+blockquote.boxout-right   { float: right; margin: 5px 0 10px 10px; }
+
+blockquote.boxout ol, 
+blockquote.boxout ul,
+blockquote.boxout p,
+blockquote.boxout h2      { margin-top: 0; }
+
+blockquote.boxout h2      { font-size: 1em; margin-bottom: .5em; }
+
+
+
 .post_content p iframe {
 	max-width: 100%; /* for iframes in posts, like embedded google docs forms, scribd documents, etc */
 }
@@ -121,8 +154,23 @@
 }
 
 /* 	==================================================
-	photo captions
+	photos
 	==================================================	*/
+
+.post img, 
+div.page img, 
+.attachment img {
+	border: 0;
+	height: auto;
+	max-width: 100%;
+}
+
+.alignleft 	{ float: left;  max-width: 308px; }
+.alignright { float: right; max-width: 308px; }
+
+img.alignright	{ margin: 5px 0 10px 10px; }
+img.alignleft 	{ margin: 5px 10px 10px 0; }
+img.aligncenter { margin: 5px 0 10px 0; }
 
 .wp-caption-text {
 	color: silver !important;
@@ -148,11 +196,13 @@
 .wp-caption.alignright { 
 	margin-right:0;
 	padding-right:0;
+	max-width: 308px;
 }
 
 .wp-caption.alignleft { 
 	margin-left:0;
 	padding-left:0;
+	max-width: 308px;
 }
 
 .wp-caption.aligncenter {
@@ -163,8 +213,18 @@
 }
 
 .wp-caption img {
-	max-width: 98.5% !important;
+	xxxxmax-width: 98.5% !important;
 }
+
+.wp-caption .size-medium {
+	max-width: 298px; /* 308px - (5px padding x 2) */
+}
+
+.widget img {
+	max-width: 100%;
+	height: auto;
+}
+
 
 /* 	==================================================
 	pagination
@@ -186,41 +246,92 @@
 .voa_wp_author { }
 
 .voa_wp_author_box {
-	/* border:1px solid silver; */
-	/* background-color: oldlace; */
-	border-top: 1px solid silver;
-	margin-top:3em;
-	margin-bottom:1em;
+	border-top: 3px solid #374ec5;
+	margin-top: 3em;
+	margin-bottom: 1em;
 	clear: both;
-	padding-top:1em;
+	padding: 0.6em 12px 0 12px;
 }
 
 .voa_wp_author_box_inner { }
 
 .author_gravatar {
 	float:left;
-	width:95px;
+	padding-top: 0.5em;
+}
+
+.author_gravatar .avatar {
+	border: 1px solid #ccc;
+	margin: 0;
+	padding: 2px;
+}
+
+.author_gravatar a:hover .avatar {
+	border-color: #1330bf;
 }
 
 .author_name {
-	float: right;
-	color: gray;
-	font-size:1.5em;
-	margin-top:5px;
-	margin-right:5px;
-	padding-left:5px;
+	color: #333;
+	font-weight: bold;
+	line-height: 2em;
+	padding-left: 101px;
+	padding-top: 3px;
 }
 
-.author_name a { color: gray; text-decoration: none }
-.author_name a:hover { color: black; text-decoration: underline }
+.author_name a { color: #333; text-decoration: none }
+.author_name a:hover { color: #1330bf; text-decoration: underline }
 
 
 .author_bio {
-	font-size: 12px;
-	line-height:1.5em;
-	color: gray;
-	/* padding: 0.5em; */
+	font-size: 13px;
+	line-height: 150%;
+	color: #666;
+	padding-left: 101px;
 }
+
+.author-social {
+	float: right;
+	font-weight: normal;
+	height: 27px;
+	margin-top: -3px;
+}
+
+.replaced { display: none; visibility: hidden; }
+
+/*
+.author-social a { color: #555; }
+.author-social a:hover { color: #000; }
+*/
+.author-social a {
+	background-color: #fff;
+	background-image: url(http://blogtest.voanews2.com/wp-content/themes/wide_pangea_2013/img/voa-social-FA-round-icons_sprite.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 27px;
+	width: 27px;
+}
+
+/* background-position: horizontal vertical; */
+.author-social a.voa-social-fb       { background-position: 0px 0px; }
+.author-social a.voa-social-fb:hover { background-position: -27px 0; }
+
+.author-social a.voa-social-gplus       { background-position: 0px -27px; }
+.author-social a.voa-social-gplus:hover { background-position: -27px -27px; }
+
+.author-social a.voa-social-instagram       { background-position: 0px -54px; }
+.author-social a.voa-social-instagram:hover { background-position: -27px -54px; }
+
+.author-social a.voa-social-pinterest       { background-position: 0px -81px; }
+.author-social a.voa-social-pinterest:hover { background-position: -27px -81px; }
+
+.author-social a.voa-social-soundcloud       { background-position: 0px -108px; }
+.author-social a.voa-social-soundcloud:hover { background-position: -27px -108px; }
+
+.author-social a.voa-social-twitter       { background-position: 0px -135px; }
+.author-social a.voa-social-twitter:hover { background-position: -27px -135px; }
+
+.author-social a.voa-social-youtube       { background-position: 0px -162px; }
+.author-social a.voa-social-youtube:hover { background-position: -27px -162px; }
 
 .posts_by_author { margin-bottom:2em; }
 .posts_by_author h3 { text-align: center }
@@ -239,13 +350,13 @@
 div.footerlinks { display: none !important }
 .post_content .post_meta { clear: both }
 .cssclear { clear: both }
-.articleContent { width:630px; overflow: hidden; /*border-right: 2px solid #374EC5; padding-right: 2px */ }
+.articleContent { width: 100%; overflow: hidden; /*border-right: 2px solid #374EC5; padding-right: 2px */ }
 .articleContent .post, .articleContent .page, .articleContent .attachment { /*border-bottom: 2px solid #374EC5; */ padding-bottom: 60px }
-.content_column2_2 .widget { /* border-bottom:2px solid #374EC5*/ margin-bottom:15px }
+.content_column2_2 .widget { /* border-bottom:2px solid #374EC5*/ margin: auto 12px 15px 12px; }
 .content_column2_2 h4.topicsHeader { margin-top:40px }
 
 .post_meta { padding:1em; background-color: rgb(230,230,230); clear:both }
-.articleContent .post, .articleContent .page, .articleContent .attachment { padding-right:20px }
+.articleContent .post, .articleContent .page, .articleContent .attachment { padding-right: 0; }
 .articleContent .stamp { color: #717070; font-size: 11px; font-weight: normal; line-height: 11px; }
 .content_column2_2 .widget_rss li { line-height:1.5em }
 .articleContent .post p, .articleContent .page p { margin-bottom:1em }
@@ -256,7 +367,7 @@ div.footerlinks { display: none !important }
 .content_column2_2 .hentry p.byline { display: none }
 .content_column2_2 .hentry h2.post-title { display: none }
 .content_column2_2 .hentry .entry-content p { margin-bottom:1em }
-div.content_column2_2 { padding-top:0px !important; }
+/*div.content_column2_2 { padding-top:0px !important; }*/
 .widget ul { padding-left:1em }
 .widget li { line-height:1.5em; list-style:disc }
 
@@ -314,17 +425,9 @@ h3.boxwidget_part a { color: white !important }
 .widget_rss img { margin:0 !important; margin-right:5px !important }
 
 .post, div.page, div.attachment { margin-bottom: 6em }
-.post .alignright { float: right }
-.post .alignleft { float: left }
 
-.post img, div.page img, .attachment img { border: 0; height: auto; max-width: 100%; }
-img.alignright { margin: 5px 0 10px 10px; }
-img.alignleft { margin: 5px 10px 10px 0; }
 .post .more-link { display: block; margin: 1em; clear: both; color:#B44E31 !important}
 .stamp { margin-bottom:0.5em;}
-
-.alignleft { float: left }
-.alignright { float: right }
 
 .widget_categories .cat-item  {
 	/*font-size:12px;*/
@@ -419,13 +522,14 @@ li.cat-item + a + ul.children {
 
 
 .widget {
-	padding: 3px !important;
+	xxxxpadding: 3px !important;
+	padding: 0 !important;
 	overflow: hidden;
 }
 
 
 .post, div.page, .attachment {
-	background-color: white !important;
+	xxxxbackground-color: white !important;
 	margin-top:5px !important;
 	margin-bottom:0 !important;
 }
@@ -479,7 +583,7 @@ li.cat-item + a + ul.children {
 
 h3.boxwidget_part { /*background-color: #FFA12E;*/ font-size: 13px; line-height: 110%; padding: 8px; font-weight: bold }
 
-div.content_column2_2 { padding-top: 8px !important; }
+div.content_column2_2 { padding-top: 12px !important; }
 h3.boxwidget_part a { vertical-align: middle; }
 
 
@@ -697,14 +801,24 @@ ol.commentlist {
 		width: 100%;
 	}
 
-	#top_bar, 
+	#top_bar,
 	#top_bar_expanded,
 	#header_services,
 	ul.header_navigation,
 	.post_nav_detail,
-	#footerServices {
+	#footerServices,
+	.post_share_top
+	{
 		display: none;
 		visibility: hidden;
+	}
+
+	.post-share-ft,
+	.dir-rtl .post-share-ft,
+	blockquote.boxout-left,
+	blockquote.boxout-right
+	{
+		float: none;
 	}
 
 	.columns {
@@ -794,6 +908,10 @@ ol.commentlist {
 		padding: 20% 0 0 0 !important;
 	}
 
+	.content_column2_2 .widget {
+		margin: 0 0 12px 0 !important;
+	}
+
 	.post_after {
 		margin-bottom: 1em;
 	}
@@ -807,14 +925,8 @@ ol.commentlist {
 		line-height: 140%;
 	}*/
 
-	.post_share_top {
-		display: none;
-		visibility: hidden;
-	}
-
 	.post-share-ft {
 		border-left: none;
-		float: none;
 		margin-left: 0;
 		padding-left: 0;
 		width: 100%;
@@ -823,7 +935,6 @@ ol.commentlist {
 	.dir-rtl .post-share-ft {
 		border: 0;
 		direction: ltr;
-		float: none;
 		margin-right: 0;
 		padding-right: 0;
 		width: 100%;
@@ -903,6 +1014,19 @@ ol.commentlist {
 		width: 46% !important;
 	}
 
+	blockquote.boxout       { max-width: 100%; padding: .5em 4%; width: 92%; }
+	blockquote.boxout-plain { border-left-width: 0; border-right-width: 0; }
+	blockquote.boxout-left, 
+	blockquote.boxout-right { margin: 5px 0 10px 0; }
+
+	.author-social {
+		display: block;
+		float: none;
+		font-weight: normal;
+		margin-top: 0;
+		margin-bottom: .25em;
+	}
+
 	#respond {
 		padding: .75em;
 	}
@@ -941,5 +1065,3 @@ ol.commentlist {
 	}
 
 }
-
-

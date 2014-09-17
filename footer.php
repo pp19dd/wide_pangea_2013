@@ -106,5 +106,7 @@
 
 
 
-      
-    <?php  get_template_part('analytics')  ?><?php    ?></body> </html>
+<?php  get_template_part('analytics')  ?>
+
+</body>
+</html>
