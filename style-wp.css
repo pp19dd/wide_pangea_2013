@@ -304,7 +304,7 @@ img.aligncenter { margin: 5px 0 10px 0; }
 */
 .author-social a {
 	background-color: #fff;
-	background-image: url(http://blogtest.voanews2.com/wp-content/themes/wide_pangea_2013/img/voa-social-FA-round-icons_sprite.png);
+	background-image: url(img/voa-social-FA-round-icons_sprite.png);
 	background-repeat: no-repeat;
 	display: inline-block;
 	height: 27px;
@@ -385,13 +385,13 @@ h3.boxwidget_part a { color: white !important }
 }
 
 .post_nav td.older a {
-	background: #fff url(http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/blog-nav-arrow-left.png) left 1px no-repeat;
+	background: #fff url(img/blog-nav-arrow-left.png) left 1px no-repeat;
 	padding-left: 18px;
 	text-align: left;
 }
 
 .post_nav td.newer a {
-	background: #fff url(http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/blog-nav-arrow-right.png) right 1px no-repeat;
+	background: #fff url(img/blog-nav-arrow-right.png) right 1px no-repeat;
 	padding-right: 18px;
 	text-align: right;
 }
@@ -721,13 +721,13 @@ ol.commentlist {
 }
 
 .dir-rtl .post_nav td.older a {
-	background: #fff url(http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/blog-nav-arrow-right.png) right 1px no-repeat;
+	background: #fff url(img/blog-nav-arrow-right.png) right 1px no-repeat;
 	padding-right: 18px;
 	text-align: right;
 }
 
 .dir-rtl .post_nav td.newer a {
-	background: #fff url(http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/blog-nav-arrow-left.png) left 1px no-repeat;
+	background: #fff url(img/blog-nav-arrow-left.png) left 1px no-repeat;
 	padding-left: 18px;
 	text-align: left;
 }
@@ -841,7 +841,7 @@ ol.commentlist {
 	/* defaults for mobile blog header logo */
 	#header .content_centered h2#header_logo {
 		background-color: #fff;
-		background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-english.png );
+		background-image: url(img/logo-mobile-english.png);
 		background-position: left top;
 		background-repeat: no-repeat;
 		background-size: contain;
@@ -856,33 +856,33 @@ ol.commentlist {
 		background-position: right top;
 	}
 
-	/*.wide_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-english.png ); }*/
-	.albanian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-albanian.png ); }
-	.armenian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-armenian.png ); }
-	.azerbaijani_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-azerbaijani.png ); }
-	.bangla_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-bangla.png ); }
-	.bosnian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-bosnian.png ); }
-	.cantonese_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-cantonese.png ); }
-	.chinese_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-chinese.png ); }
-	.dari_pangea_2013 #header .content_centered h2#header_logo 			{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-dari.png ); }
-	.deewa_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-deewa.png ); }
-	.georgian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-georgian.png ); }
-	.hausa_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-hausa.png ); }
-	.indonesian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-indonesian.png ); }
-	.khmer_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-khmer.png ); }
-	.korean_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-korean.png ); }
-	.kurdi_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-kurdi.png ); }
-	.kurdish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-kurdish.png ); }
-	.macedonian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-macedonian.png ); }
-	.pashto_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-pashto.png ); }
-	.russian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-russian.png ); }
-	.serbian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-serbian.png ); }
-	.spanish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-spanish.png ); }
-	.turkish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-turkish.png ); }
-	.ukrainian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-ukrainian.png ); }
-	.urdu_pangea_2013 #header .content_centered h2#header_logo 			{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-urdu.png ); }
-	.uzbek_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-uzbek.png ); }
-	.vietnamese_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( http://blogs.voanews.com/wp-content/themes/wide_pangea_2013_dev/img/logo-mobile-vietnamese.png ); }
+	/*.wide_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-english.png ); }*/
+	.albanian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-albanian.png ); }
+	.armenian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-armenian.png ); }
+	.azerbaijani_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( img/logo-mobile-azerbaijani.png ); }
+	.bangla_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-bangla.png ); }
+	.bosnian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-bosnian.png ); }
+	.cantonese_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( img/logo-mobile-cantonese.png ); }
+	.chinese_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-chinese.png ); }
+	.dari_pangea_2013 #header .content_centered h2#header_logo 			{ background-image: url( img/logo-mobile-dari.png ); }
+	.deewa_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-deewa.png ); }
+	.georgian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-georgian.png ); }
+	.hausa_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-hausa.png ); }
+	.indonesian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( img/logo-mobile-indonesian.png ); }
+	.khmer_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-khmer.png ); }
+	.korean_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-korean.png ); }
+	.kurdi_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-kurdi.png ); }
+	.kurdish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-kurdish.png ); }
+	.macedonian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( img/logo-mobile-macedonian.png ); }
+	.pashto_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-pashto.png ); }
+	.russian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-russian.png ); }
+	.serbian_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-serbian.png ); }
+	.spanish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-spanish.png ); }
+	.turkish_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-turkish.png ); }
+	.ukrainian_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( img/logo-mobile-ukrainian.png ); }
+	.urdu_pangea_2013 #header .content_centered h2#header_logo 			{ background-image: url( img/logo-mobile-urdu.png ); }
+	.uzbek_pangea_2013 #header .content_centered h2#header_logo 		{ background-image: url( img/logo-mobile-uzbek.png ); }
+	.vietnamese_pangea_2013 #header .content_centered h2#header_logo 	{ background-image: url( img/logo-mobile-vietnamese.png ); }
 
 	#header .content_centered h2#header_logo a {
 		height: 0;

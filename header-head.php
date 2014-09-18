@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>?v6" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>?v8" />
 <?php /* <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css" /> */ ?>
 
 <!-- next line needed for Font Awesome on IE -->
