@@ -140,6 +140,43 @@ function voa_get_latest_posts( $blog_id, &$meta, $limit = 3 ) {
 	return( $entries );
 }
 
+/**
+ * resolves or returns a header image of a blog_id
+ * @return string
+ */
+
+function voa_get_blog_header_image($image, $blog_id) {
+    global $wpdb;
+
+    // sigh: no header specified
+    if( is_null($image) ) return( VOA_DEFAULT_LOGO_URL );
+    
+    // okay: only one header uploaded
+    if( $image !== "random-uploaded-image" ) return( $image );
+
+    // otherwise: sigh, rotate through a random header
+    $images = array();
+    
+    // get post IDs of possible headers
+    $headers = $wpdb->get_results(sprintf(
+        "select * from wp_%s_postmeta where `meta_key`='_wp_attachment_is_custom_header'",
+        $blog_id
+    ));
+    
+    // resolve them to URLs (post_content or guid)
+    foreach( $headers as $header ) {
+        $images[] = $wpdb->get_row(sprintf(
+            "select * from wp_%s_posts where ID=%s limit 1",
+            $blog_id,
+            $header->post_id
+        ));
+    }
+    
+    // pick a random one, return URL
+    $random = rand(0,count($images) - 1);
+    return( $images[$random]->guid );
+}
+
 
 /**
  * Gets a simple list of all WPMU blogs -- live blogs, with their options
@@ -176,9 +213,9 @@ function voa_get_intro_blogs_all( $show_hidden = false ) {
 		$theme_mods = voa_get_option(
 			$blog->blog_id, "theme_mods_" . $blogs[$k]->meta->current_theme_slug
 		);
-		if( is_null($theme_mods["header_image"]) ) $theme_mods["header_image"] = VOA_DEFAULT_LOGO_URL;
-		$blogs[$k]->meta->header_image = $theme_mods["header_image"];
 		
+        $blogs[$k]->meta->header_image = voa_get_blog_header_image($theme_mods["header_image"], $blog->blog_id);
+
 		$blogs[$k]->meta->blog_name = voa_get_option( $blog->blog_id, "blogname", true );
 		$blogs[$k]->meta->blog_url = sprintf( "http://blogs.voanews.com%s", $blog->path );
 		$blogs[$k]->meta->blog_desc = voa_get_option( $blog->blog_id, "blogdescription", true );
