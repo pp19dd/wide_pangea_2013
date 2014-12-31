@@ -40,7 +40,7 @@ if( isset( $o['show_author'] ) ) {
 
 ?>
 
-<div class="voa_wp_author_box">
+<div class="voa_wp_author_box author-<?php echo get_the_author_meta( 'user_login' ) ?>">
 	<div class="voa_wp_author_box_inner">
 		<div class="author_gravatar">
 			<a title="Show all posts by <?php echo $voa_author_name ?>" href="<?php echo $voa_author_url; ?>"><?php echo $voa_avatar ?></a>
